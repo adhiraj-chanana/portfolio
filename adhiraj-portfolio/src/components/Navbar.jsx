@@ -33,7 +33,7 @@ function Navbar() {
     >
       <Link to="/" style={navLinkStyle}>Home</Link>
       <Link to="/projects" style={navLinkStyle}>Projects</Link>
-      <Link to="#about" style={navLinkStyle}>About Me</Link>
+      <Link to="/about" style={navLinkStyle}>About Me</Link>
       <Link to="#tech" style={navLinkStyle}>Tech Stack</Link>
     </nav>
   );
