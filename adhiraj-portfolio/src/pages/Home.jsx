@@ -95,8 +95,8 @@ function Home() {
           }}
         >
           <FallingText
-            text={`I am a fragile component if you hover on me I will fall and hurt myself and might make the website look better.`}
-            highlightWords={["fragile", "component", "hover", "website", "better"]}
+           text={`Developer. Développeur. Innovator. Innovatore. 创新者. Entwickler. Creator. Créateur. Создатель. Desarrollador. Diseñador. Designer. Designer graphique. Entwickler. 开发者. デベロッパー. مطور.`}
+           highlightWords={["Developer", "Innovator", "创新者", "Creator", "Создатель", "Designer", "開発者", "デベロッパー"]}           
             highlightClass="highlighted"
             trigger="hover"
             backgroundColor="transparent"
