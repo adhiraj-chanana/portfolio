@@ -1,130 +1,117 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
-import Folder from '../components/Folder';
+import FaultyTerminal from '../components/FaultyTerminal';
+import './Experience.css';
 
 function Experience() {
+  const [loading, setLoading] = useState(true);
+  const experienceData = [
+    {
+      title: 'Web Development Intern',
+      org: 'MSU Student Life',
+      duration: 'May 2025 - Present',
+      tasks: [
+        'Developed backend APIs; reduced manual processing by 30%.',
+        'Debugged full-stack issues and optimized Drupal modules.',
+      ],
+    },
+    {
+      title: 'Resident Assistant',
+      org: 'MSU',
+      duration: 'Jan 2025 - Present',
+      tasks: [
+        'Fostered inclusive communities & resolved conflicts.',
+        'Hosted events supporting academic and personal growth.',
+      ],
+    },
+    {
+      title: 'Undergrad Learning Assistant',
+      org: 'CSE Dept',
+      duration: 'Jan 2025 - Present',
+      tasks: [
+        'Guided Python labs, data structures, debugging & problem-solving.',
+        'Created inclusive learning environments for diverse students.',
+      ],
+    },
+    {
+      title: 'Professorial Research Assistant',
+      org: 'MSU',
+      duration: 'Aug 2023 - Present',
+      tasks: [
+        'Built JS tools for visualizing climate trends (1979–2070).',
+        'Enabled predictive insights into spatiotemporal datasets.',
+      ],
+    },
+    {
+      title: 'Co-Director Marketing',
+      org: 'Indian Students Org',
+      duration: 'May 2024 - Jun 2025',
+      tasks: [
+        'Grew event attendance by 200% via targeted campaigns.',
+        'Led content strategy and community engagement.',
+      ],
+    },
+  ];
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <Navbar />
-      <div
-        style={{
-          background: '#000',
-          minHeight: '100vh',
-          padding: '8rem 4rem 4rem 4rem',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'flex-start'
-        }}
-      >
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '4rem 6rem',
-            justifyContent: 'center',
-            alignItems: 'center',
-            transform: 'translateX(100px) translateY(120px)',
-          }}
-        >
-          {/* Web Dev */}
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <Folder
-              size={2}
-              color="#5227FF"
-              items={[
-                <p style={{ fontSize: '0.35rem', color: '#000' }}>
-                  Developed backend features & APIs, reduced manual processing by 30%.
-                </p>,
-                <p style={{ fontSize: '0.35rem', color: '#000' }}>
-                  Debugged full-stack issues, improved UI/UX & optimized Drupal modules.
-                </p>,
-              ]}
-            />
-            <h4 style={{ color: '#fff', margin: '3rem 0 0.3rem' }}>Web Development Intern</h4>
-            <p style={{ color: '#aaa', fontSize: '0.9rem' }}>
-              MSU Student Life · May 2025 - Present
-            </p>
-          </div>
 
-          {/* RA */}
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <Folder
-              size={2}
-              color="#E91E63"
-              items={[
-                <p style={{ fontSize: '0.35rem', color: '#000' }}>
-                  Fostered community & inclusivity, resolved conflicts with care.
-                </p>,
-                <p style={{ fontSize: '0.35rem', color: '#000' }}>
-                  Ran growth & diversity events, supported residents’ academic & personal needs.
-                </p>,
-              ]}
-            />
-            <h4 style={{ color: '#fff', margin: '3rem 0 0.3rem' }}>Resident Assistant</h4>
-            <p style={{ color: '#aaa', fontSize: '0.9rem' }}>
-              MSU · Jan 2025 - Present
-            </p>
-          </div>
+      {/* Background Terminal Effect */}
+      <div style={{ width: '100%', height: '100vh', position: 'fixed', top: 0, zIndex: -1 }}>
+      <FaultyTerminal
+  scale={1.5}
+  digitSize={1.2}
+  timeScale={0.5}         // Speed
+  noiseAmp={1}
+  brightness={0.6}
+  scanlineIntensity={0.5}
+  curvature={0.1}
+  mouseStrength={0.5}
+  mouseReact={true}
+  pageLoadAnimation={false} // OFF as requested
+  glitchAmount={1}
+  flickerAmount={1}
+  chromaticAberration={0}
+  dither={0}
+  tint="#b6efb0"           // Light green tint color from image
+/>
 
-          {/* LA */}
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <Folder
-              size={2}
-              color="#009688"
-              items={[
-                <p style={{ fontSize: '0.35rem', color: '#000' }}>
-                  Guided CSE231 labs on Python, data structures, debugging & problem solving.
-                </p>,
-                <p style={{ fontSize: '0.35rem', color: '#000' }}>
-                  Created inclusive, supportive learning environment for diverse student backgrounds.
-                </p>,
-              ]}
-            />
-            <h4 style={{ color: '#fff', margin: '3rem 0 0.3rem' }}>Undergrad Learning Assistant</h4>
-            <p style={{ color: '#aaa', fontSize: '0.9rem' }}>
-              CSE Dept · Jan 2025 - Present
-            </p>
-          </div>
+      </div>
 
-          {/* Research */}
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <Folder
-              size={2}
-              color="#FFA500"
-              items={[
-                <p style={{ fontSize: '0.35rem', color: '#000' }}>
-                  Built advanced JS visualization tool analyzing extreme climate trends (1979–2070).
-                </p>,
-                <p style={{ fontSize: '0.35rem', color: '#000' }}>
-                  Enabled predictive insights into spatiotemporal datasets for scientific research.
-                </p>,
-              ]}
-            />
-            <h4 style={{ color: '#fff', margin: '3rem 0 0.3rem' }}>Professorial Research Assistant</h4>
-            <p style={{ color: '#aaa', fontSize: '0.9rem' }}>
-              MSU · Aug 2023 - Present
-            </p>
-          </div>
-
-          {/* Marketing */}
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <Folder
-              size={2}
-              color="#3F51B5"
-              items={[
-                <p style={{ fontSize: '0.35rem', color: '#000' }}>
-                  Grew event attendance & membership by 200% through targeted campaigns.
-                </p>,
-                <p style={{ fontSize: '0.35rem', color: '#000' }}>
-                  Developed content, analytics strategy, and fostered a vibrant ISO community.
-                </p>,
-              ]}
-            />
-            <h4 style={{ color: '#fff', margin: '3rem 0 0.3rem' }}>Co-Director Marketing</h4>
-            <p style={{ color: '#aaa', fontSize: '0.9rem' }}>
-              Indian Students Org · May 2024 - Jun 2025
-            </p>
-          </div>
+      {/* Terminal Text Overlay */}
+      <div className="experience-terminal">
+        <div className="boot-text">
+          {loading ? (
+            <>
+              <p> BOOTING EXPERIENCE.OS...</p>
+              <p> Loading modules...</p>
+              <div className="loading-bar">
+                <div className="progress" />
+              </div>
+            </>
+          ) : (
+            <>
+              <p> SYSTEM READY.</p>
+              <br />
+              {experienceData.map((exp, idx) => (
+                <div key={idx}>
+                  <p className="title">
+                    {`> ${exp.title} – ${exp.org} (${exp.duration}) ..........✔`}
+                  </p>
+                  {exp.tasks.map((task, i) => (
+                    <p className="task" key={i}>{`    ↳ ${task}`}</p>
+                  ))}
+                  <br />
+                </div>
+              ))}
+            </>
+          )}
         </div>
       </div>
     </>

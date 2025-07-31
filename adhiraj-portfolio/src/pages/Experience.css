@@ -1,0 +1,69 @@
+.experience-terminal {
+    position: relative;
+    z-index: 2;
+    padding: 6rem 2rem 4rem;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    text-align: left;
+    font-weight: normal;
+  
+    /* REMOVE these lines to eliminate black tint */
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    /* backdrop-filter: blur(1px); */
+  }
+  
+  .boot-text {
+    max-width: 900px;
+    width: 100%;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    margin: 0 auto;
+    padding: 2rem;
+    animation: flicker 1.5s infinite alternate;
+  }
+  
+  .boot-text p.title {
+    font-weight: bold;
+    color: #ffffff;
+    margin: 2.5rem 0 0.8rem;
+    font-size: 1.2rem;
+  }
+  
+  .boot-text p.task {
+    margin-left: 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  @keyframes flicker {
+    0% { opacity: 1; }
+    100% { opacity: 0.95; }
+  }
+  
+  
+  
+  .loading-bar {
+    width: 60%;
+    height: 12px;
+    border: 1px solid #00ff55;
+    margin: 1rem auto;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  .progress {
+    width: 0%;
+    height: 100%;
+    background: #00ff55;
+    animation: load 2.2s forwards;
+  }
+  
+  @keyframes load {
+    from { width: 0%; }
+    to { width: 100%; }
+  }

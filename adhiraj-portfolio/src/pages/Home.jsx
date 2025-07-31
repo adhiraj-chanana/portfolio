@@ -94,17 +94,25 @@ function Home() {
             overflow: 'visible',
           }}
         >
-          <FallingText
-           text={`Developer. Développeur. Innovator. Innovatore. 创新者. Entwickler. Creator. Créateur. Создатель. Desarrollador. Diseñador. Designer. Designer graphique. Entwickler. 开发者. デベロッパー. مطور.`}
-           highlightWords={["Developer", "Innovator", "创新者", "Creator", "Создатель", "Designer", "開発者", "デベロッパー"]}           
-            highlightClass="highlighted"
-            trigger="hover"
-            backgroundColor="transparent"
-            wireframes={false}
-            gravity={0.56}
-            fontSize="2rem"
-            mouseConstraintStiffness={0.9}
-          />
+  <FallingText
+  text={`I build things that (actually) work: backend systems, AI tools, and weird little ideas that somehow solve real problems. I learn best by doing, breaking, fixing, and doing again. Always up for meaningful collabs.`}
+  highlightWords={[
+    "build",
+    "backend systems",
+    "AI tools",
+    "real problems",
+    "learn best by doing",
+    "collabs"
+  ]}
+  highlightClass="highlighted"
+  trigger="hover"
+  backgroundColor="transparent"
+  wireframes={false}
+  gravity={0.56}
+  fontSize="2rem"
+  mouseConstraintStiffness={0.9}
+/>
+
         </div>
 
         {/* Tagline */}
@@ -117,7 +125,7 @@ function Home() {
             marginTop: '2.5rem',
           }}
         >
-          Exploring ideas that bounce, bend, and come alive.
+          (Don't hover on the text)
         </p>
 
         {/* Footer */}
@@ -130,7 +138,7 @@ function Home() {
             letterSpacing: '1px',
           }}
         >
-          ⚡ Portfolio v2025 — Made with caffeine & curiosity
+          No footer found :/
         </div>
       </main>
     </>
